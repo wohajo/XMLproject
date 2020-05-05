@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guitarShop>
+    <guitars>
+        <guitar type="electric" numberOfStrings="6" orientation="left">
+            <brand>Fender</brand>
+            <model>Made in Mexico 1970</model>
+            <pickups>
+                <brand>Fender</brand>
+                <type>SSS</type>
+            </pickups>
+            <price>3000</price>
+        </guitar>
+    </guitars>
+
+    <basses>
+        <bass type="electric" numberOfStrings="4" orientation="right">
+            <brand>Cort</brand>
+            <model>G25</model>
+            <pickups>SS</pickups>
+            <price>1200</price>
+        </bass>
+    </basses>
+
+    <amplifiers>
+        <amplifier for="bass" type="analog">
+            <brand>Fender</brand>
+            <model>Bassman</model>
+            <speakers quantity="1" power="20">
+                <brand>Fender</brand>
+                <model>Truetone</model>
+            </speakers>
+        </amplifier>
+    </amplifiers>
+    
+    <accesories>
+        <picks width="1">
+            <brand>Tortex</brand>
+            <model>UltraWide</model>
+        </picks>
+        
+        <stringPacks>
+            <stringPack sizeFrom="9" sizeTo="46">
+                <brand>Fender</brand>
+                <price>50</price>
+            </stringPack>
+        </stringPacks>
+        
+        <effects>
+            <effect type="distortion" voltage="9">
+                <brand>BOSS</brand>
+                <model>DS2</model>
+            </effect>
+        </effects>
+    </accesories>
+
+    <brands>
+        <brand>Fender</brand>
+        <brand>BOSS</brand>
+    </brands>
+</guitarShop>
