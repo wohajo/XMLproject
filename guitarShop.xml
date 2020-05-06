@@ -156,8 +156,8 @@
     <orders>
 
         <order courier="yes">
-            <guitar id="gui-01"/>
-            <effect id="efc-01"/>
+            <orderedItem itemId="gui-01"/>
+            <orderedItem itemId="efc-01"/>
             <address>
                 <city>Gdansk</city>
                 <postcode>86-400</postcode>
@@ -173,8 +173,8 @@
         </order>
 
         <order courier="no">
-            <guitar id="bas-01"/>
-            <effect id="amp-01"/>
+            <orderedItem itemId="bas-01"/>
+            <orderedItem itemId="amp-01"/>
             <address>
                 <city>Warsaw</city>
                 <postcode>32-730</postcode>
@@ -189,9 +189,9 @@
         </order>
 
         <order courier="yes">
-            <guitar id="gui-03"/>
-            <effect id="amp-03"/>
-            <stringPack id="spk-03"/>
+            <orderedItem itemId="gui-03"/>
+            <orderedItem itemId="amp-03"/>
+            <orderedItem itemId="spk-03"/>
             <address>
                 <city>Poznan</city>
                 <postcode>76-722</postcode>
@@ -207,9 +207,9 @@
         </order>
 
         <order courier="yes">
-            <guitar id="gui-02"/>
-            <effect id="amp-02"/>
-            <pick id="pic-03"/>
+            <orderedItem itemId="gui-02"/>
+            <orderedItem itemId="amp-02"/>
+            <orderedItem itemId="pic-03"/>
             <address>
                 <city>Krakow</city>
                 <postcode>32-222</postcode>
