@@ -1,60 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <guitarShop>
-    <guitars>
-        <guitar type="electric" numberOfStrings="6" orientation="left">
-            <brand>Fender</brand>
+    <products>
+        <guitar id="gui-01" type="electric" numberOfStrings="6" orientation="left">
+            <brand name="Fender"/>
             <model>Made in Mexico 1970</model>
             <pickups>
-                <brand>Fender</brand>
+                <brand name="Fender"/>
                 <type>SSS</type>
             </pickups>
-            <price>3000</price>
+            <price currency="pln">3000</price>
         </guitar>
-    </guitars>
 
-    <basses>
-        <bass type="electric" numberOfStrings="4" orientation="right">
-            <brand>Cort</brand>
-            <model>G25</model>
+        <guitar id="gui-02" type="electric" numberOfStrings="7" orientation="right">
+            <brand name="Ibanez"/>
+            <model>GRX20</model>
+            <pickups>
+                <brand name="Ibanez"/>
+                <type>HH</type>
+            </pickups>
+            <price currency="pln">2800</price>
+        </guitar>
+
+        <guitar id="gui-03" type="electric_baritone" numberOfStrings="6" orientation="right">
+            <brand name="Fender"/>
+            <model>B1</model>
+            <pickups>
+                <brand name="Fender"/>
+                <type>SSS</type>
+            </pickups>
+            <price currency="pln">2700</price>
+        </guitar>
+
+        <guitar id="gui-04" type="acoustic" numberOfStrings="6" orientation="right">
+            <brand name="Epiphone"/>
+            <model>Masterbilt Frontier</model>
+            <price currency="pln">2000</price>
+        </guitar>
+
+        <guitar id="gui-05" type="classic" numberOfStrings="6" orientation="right">
+            <brand name="Epiphone"/>
+            <model>Hispano master</model>
+            <price currency="pln">2300</price>
+        </guitar>
+
+        <bass id="bas-01" type="electric" numberOfStrings="4" orientation="right">
+            <brand name="Fender"/>
+            <model>Flea Signature</model>
             <pickups>SS</pickups>
-            <price>1200</price>
+            <price currency="pln">4500</price>
         </bass>
-    </basses>
 
-    <amplifiers>
-        <amplifier for="bass" type="analog">
-            <brand>Fender</brand>
+        <bass id="bas-02" type="electric" numberOfStrings="4" orientation="left">
+            <brand name="Fender"/>
+            <model>Flea Signature LH</model>
+            <pickups>SS</pickups>
+            <price currency="pln">4500</price>
+        </bass>
+
+        <bass id="bas-03" type="electric" numberOfStrings="4" orientation="right">
+            <brand name="Fender"/>
+            <model>AM Original 70</model>
+            <pickups>SS</pickups>
+            <price currency="pln">7000</price>
+        </bass>
+
+        <amplifier id="amp-01" for="bass" type="analog" power="20">
+            <brand name="Fender"/>
             <model>Bassman</model>
-            <speakers quantity="1" power="20">
-                <brand>Fender</brand>
+            <price currency="pln">1800</price>
+            <speakers quantity="1" radius="12">
+                <brand name="Fender"/>
                 <model>Truetone</model>
             </speakers>
         </amplifier>
-    </amplifiers>
-    
-    <accesories>
-        <picks width="1">
-            <brand>Tortex</brand>
-            <model>UltraWide</model>
-        </picks>
-        
-        <stringPacks>
-            <stringPack sizeFrom="9" sizeTo="46">
-                <brand>Fender</brand>
-                <price>50</price>
-            </stringPack>
-        </stringPacks>
-        
-        <effects>
-            <effect type="distortion" voltage="9">
-                <brand>BOSS</brand>
-                <model>DS2</model>
-            </effect>
-        </effects>
-    </accesories>
 
-    <brands>
-        <brand>Fender</brand>
-        <brand>BOSS</brand>
-    </brands>
+        <amplifier id="amp-02" for="guitar" type="digital" power="50">
+            <brand name="Boss"/>
+            <model>Katana 50</model>
+            <price currency="pln">1000</price>
+            <speakers quantity="2" radius="12">
+                <brand name="Fender"/>
+                <model>Truetone</model>
+            </speakers>
+        </amplifier>
+
+        <amplifier id="amp-03" for="guitar" type="hybrid" power="20">
+            <brand name="Marshall"/>
+            <model>DC20</model>
+            <price currency="pln">1200</price>
+            <speakers quantity="1" radius="10">
+                <brand name="Marshall"/>
+                <model>CustomShop</model>
+            </speakers>
+        </amplifier>
+
+        <pick id="pic-01" width="1.0">
+            <brand name="Tortex"/>
+            <model>UltraWide</model>
+            <price currency="pln">5</price>
+        </pick>
+
+        <pick id="pic-02" width="0.9">
+            <brand name="Pickey"/>
+            <model>Medium</model>
+            <price currency="pln">5</price>
+        </pick>
+        
+        <pick id="pic-03" width="0.6">
+            <brand name="Tortex"/>
+            <model>Light</model>
+            <price currency="pln">3</price>
+        </pick>
+
+        <stringPack id="spk-01" sizeFrom="9" sizeTo="46">
+            <brand name="Fender"/>
+            <price currency="pln">50</price>
+        </stringPack>
+
+        <stringPack id="spk-02" sizeFrom="11" sizeTo="48">
+            <brand name="Ibanez"/>
+            <price currency="pln">70</price>
+        </stringPack>
+
+        <stringPack id="spk-03" sizeFrom="8" sizeTo="45">
+            <brand name="Fender"/>
+            <price currency="pln">40</price>
+        </stringPack>
+        
+        <effect id="efc-01" type="distortion" voltage="9">
+            <brand name="Boss"/>
+            <model>DS2</model>
+            <price currency="pln">300</price>
+        </effect>
+
+        <effect id="efc-02" type="overdrive" voltage="9">
+            <brand name="Boss"/>
+            <model>OD2</model>
+            <price currency="pln">320</price>
+        </effect>
+
+        <effect id="efc-03" type="tremolo" voltage="9">
+            <brand name="EHX"/>
+            <model>T1</model>
+            <price currency="pln">250</price>
+        </effect>
+
+        <effect id="efc-04" type="delay" voltage="9">
+            <brand name="TrueTone"/>
+            <model>Del-02</model>
+            <price currency="pln">340</price>
+        </effect>
+
+    </products>
+
+    <orders>
+
+        <order courier="yes">
+            <guitar id="gui-01"/>
+            <effect id="efc-01"/>
+            <address>
+                <city>Gdansk</city>
+                <postcode>86-400</postcode>
+                <street>Dluga</street>
+                <building>2</building>
+                <flat>15</flat>
+            </address>
+            <person>
+                <name>Karol</name>
+                <surname>Glosny</surname>
+                <phoneNumber>653420120</phoneNumber>
+            </person>
+        </order>
+
+        <order courier="no">
+            <guitar id="bas-01"/>
+            <effect id="amp-01"/>
+            <address>
+                <city>Warsaw</city>
+                <postcode>32-730</postcode>
+                <street>Glowna</street>
+                <building>8</building>
+            </address>
+            <person>
+                <name>Grzegorz</name>
+                <surname>Funkcki</surname>
+                <phoneNumber>444981021</phoneNumber>
+            </person>
+        </order>
+
+        <order courier="yes">
+            <guitar id="gui-03"/>
+            <effect id="amp-03"/>
+            <stringPack id="spk-03"/>
+            <address>
+                <city>Poznan</city>
+                <postcode>76-722</postcode>
+                <street>Kozla</street>
+                <building>16</building>
+                <flat>12</flat>
+            </address>
+            <person>
+                <name>Katarzyna</name>
+                <surname>Majewska</surname>
+                <phoneNumber>349123999</phoneNumber>
+            </person>
+        </order>
+
+        <order courier="yes">
+            <guitar id="gui-02"/>
+            <effect id="amp-02"/>
+            <pick id="pic-03"/>
+            <address>
+                <city>Krakow</city>
+                <postcode>32-222</postcode>
+                <street>Smoka</street>
+                <building>241</building>
+                <flat>53</flat>
+            </address>
+            <person>
+                <name>Damian</name>
+                <surname>Krajewerski</surname>
+                <phoneNumber>210510233</phoneNumber>
+            </person>
+        </order>
+
+    </orders>
+
 </guitarShop>
