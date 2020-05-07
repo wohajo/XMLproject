@@ -40,7 +40,7 @@
     <xsd:complexType name="guitarType">
         <xsd:sequence>
             <xsd:element name="brand" type="brandType"/>
-            <xsd:element name="model" type="modelType"/>
+            <xsd:element name="model" type="xsd:string"/>
             <xsd:element name="pickups" type="pickupsType"/>
             <xsd:element name="price" type="priceType"/>
         </xsd:sequence>
@@ -53,7 +53,7 @@
     <xsd:complexType name="bassType">
         <xsd:sequence>
             <xsd:element name="brand" type="brandType"/>
-            <xsd:element name="model" type="modelType"/>
+            <xsd:element name="model" type="xsd:string"/>
             <xsd:element name="pickups" type="pickupsType"/>
             <xsd:element name="price" type="priceType"/>
         </xsd:sequence>
@@ -66,7 +66,7 @@
     <xsd:complexType name="amplifierType">
         <xsd:sequence>
             <xsd:element name="brand" type="brandType"/>
-            <xsd:element name="model" type="modelType"/>
+            <xsd:element name="model" type="xsd:string"/>
             <xsd:element name="price" type="priceType"/>
             <xsd:element name="speakers" type="speakersType"/>
         </xsd:sequence>
@@ -79,7 +79,7 @@
     <xsd:complexType name="pickType">
         <xsd:sequence>
             <xsd:element name="brand" type="brandType"/>
-            <xsd:element name="model" type="modelType"/>
+            <xsd:element name="model" type="xsd:string"/>
             <xsd:element name="price" type="priceType"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="idType" use="required"/>
@@ -99,7 +99,7 @@
     <xsd:complexType name="effectType">
         <xsd:sequence>
             <xsd:element name="brand" type="brandType"/>
-            <xsd:element name="model" type="modelType"/>
+            <xsd:element name="model" type="xsd:string"/>
             <xsd:element name="price" type="priceType"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="idType" use="required"/>
@@ -143,5 +143,134 @@
     </xsd:complexType>
 
     <!-- definition of simple types -->
+
+    <xsd:simpleType name="brandType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Fender"/>
+            <xsd:enumeration value="Boss"/>
+            <xsd:enumeration value="EHX"/>
+            <xsd:enumeration value="Ibanez"/>
+            <xsd:enumeration value="Epiphone"/>
+            <xsd:enumeration value="Marshall"/>
+            <xsd:enumeration value="Tortex"/>
+            <xsd:enumeration value="Pickey"/>
+            <xsd:enumeration value="TrueTone"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="pickupsType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="3"/>
+            <xsd:enumeration value="SSS"/>
+            <xsd:enumeration value="HSS"/>
+            <xsd:enumeration value="SS"/>
+            <xsd:enumeration value="HH"/>
+            <xsd:enumeration value="HSH"/>
+            <xsd:enumeration value="HHH"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="priceType">
+        <xsd:attribute name="currency" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="guitarTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value=""/>
+            <xsd:enumeration value=""/>
+            <xsd:enumeration value=""/>
+            <xsd:enumeration value=""/>
+            <xsd:enumeration value=""/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="idType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="numberOfStringsType">
+        <xsd:restriction base="xsd:nonNegativeInteger">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="orientationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="left"/>
+            <xsd:enumeration value="right"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="speakersType">
+
+    </xsd:complexType>
+
+    <xsd:simpleType name="forType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value=""/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ampTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value=""/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="powerType">
+        <xsd:restriction base="xsd:nonNegativeInteger">
+            
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="widthType">
+        <xsd:restriction base="xsd:double">
+            <xsd:minInclusive value="0.3"/>
+            <xsd:maxInclusive value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="sizeType">
+        <xsd:restriction base="xsd:nonNegativeInteger">
+            <xsd:minInclusive value="6"/>
+            <xsd:maxInclusive value="60"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="effectTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value=""/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="voltageType">
+        <xsd:restriction base="xsd:nonNegativeInteger"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="courierType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value=""/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="orderedItemType">
+        <xsd:restriction base="xsd:string">
+            
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="postcodeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value=""></xsd:pattern>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="phoneNumberType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="9"/>
+            <xsd:maxLength value="9"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
 </xsd:schema>
