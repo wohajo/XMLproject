@@ -10,57 +10,12 @@
             </xsd:sequence>
         </xsd:complexType>
 
-        <xsd:key name="idKeyGuitar">
-            <xsd:selector xpath="./guitarShop/guitarType"/>
+        <xsd:key name="idKey">
+            <xsd:selector xpath="products/guitar | products/bass | products/amplifier | products/pick | products/stringPack | products/effect"/>
             <xsd:field xpath="@id"/>
         </xsd:key>
-        <xsd:keyref name="idKeyGuitarRef" refer="idKeyGuitar">
-            <xsd:selector xpath="./guitarShop/orders/orderedItem"/>
-            <xsd:field xpath="@idref"/>
-        </xsd:keyref>
-
-        <xsd:key name="idKeyBass">
-            <xsd:selector xpath="./guitarShop/bassType"/>
-            <xsd:field xpath="@id"/>
-        </xsd:key>
-        <xsd:keyref name="idKeyBassRef" refer="idKeyBass">
-            <xsd:selector xpath="./guitarShop/orders/orderedItem"/>
-            <xsd:field xpath="@idref"/>
-        </xsd:keyref>
-
-        <xsd:key name="idKeyAmp">
-            <xsd:selector xpath="./guitarShop/amplifierType"/>
-            <xsd:field xpath="@id"/>
-        </xsd:key>
-        <xsd:keyref name="idKeyAmpRef" refer="idKeyAmp">
-            <xsd:selector xpath="./guitarShop/orders/orderedItem"/>
-            <xsd:field xpath="@idref"/>
-        </xsd:keyref>
-
-        <xsd:key name="idKeyPick">
-            <xsd:selector xpath="./guitarShop/pickType"/>
-            <xsd:field xpath="@id"/>
-        </xsd:key>
-        <xsd:keyref name="idKeyPickRef" refer="idKeyPick">
-            <xsd:selector xpath="./guitarShop/orders/orderedItem"/>
-            <xsd:field xpath="@idref"/>
-        </xsd:keyref>
-
-        <xsd:key name="idKeyStringPack">
-            <xsd:selector xpath="./guitarShop/stringPackType"/>
-            <xsd:field xpath="@id"/>
-        </xsd:key>
-        <xsd:keyref name="idKeyStringPackRef" refer="idKeyStringPack">
-            <xsd:selector xpath="./guitarShop/orders/orderedItem"/>
-            <xsd:field xpath="@idref"/>
-        </xsd:keyref>
-
-        <xsd:key name="idKeyEffect">
-            <xsd:selector xpath="./guitarShop/effectType"/>
-            <xsd:field xpath="@id"/>
-        </xsd:key>
-        <xsd:keyref name="idKeyEffectRef" refer="idKeyEffect">
-            <xsd:selector xpath="./guitarShop/orders/orderedItem"/>
+        <xsd:keyref name="idKeyRef" refer="idKey">
+            <xsd:selector xpath="orders/order/orderedItem"/>
             <xsd:field xpath="@idref"/>
         </xsd:keyref>
     </xsd:element>
