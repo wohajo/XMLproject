@@ -33,7 +33,7 @@
 
     <xsd:complexType name="guitarType">
         <xsd:sequence>
-            <xsd:element name="brand" type="brandType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="pickups" type="pickupsType" minOccurs="0"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
@@ -46,7 +46,7 @@
 
     <xsd:complexType name="bassType">
         <xsd:sequence>
-            <xsd:element name="brand" type="brandType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="pickups" type="pickupsType" minOccurs="0" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
@@ -59,7 +59,7 @@
 
     <xsd:complexType name="amplifierType">
         <xsd:sequence>
-            <xsd:element name="brand" type="brandType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="speakers" type="speakersType" minOccurs="1" maxOccurs="1"/>
@@ -72,7 +72,7 @@
 
     <xsd:complexType name="pickType">
         <xsd:sequence>
-            <xsd:element name="brand" type="brandType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
@@ -82,7 +82,7 @@
 
     <xsd:complexType name="stringPackType">
         <xsd:sequence>
-            <xsd:element name="brand" type="brandType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="idType" use="required"/>
@@ -92,7 +92,7 @@
 
     <xsd:complexType name="effectType">
         <xsd:sequence>
-            <xsd:element name="brand" type="brandType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
@@ -115,7 +115,7 @@
             <xsd:element name="address" type="addressType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="person" type="personType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
-        <xsd:attribute name="orderId" type="xsd:nonNegativeInteger" use="required"/>
+        <xsd:attribute name="orderId" type="idType" use="required"/>
         <xsd:attribute name="courier" type="courierType" use="required"/>
     </xsd:complexType>
     
@@ -137,11 +137,35 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    <!-- definition of simple types -->
-
-    <xsd:complexType name="brandType">
-        <xsd:attribute name="name" type="guitarBrandNameType"/>
+    <xsd:complexType name="pickupsType">
+        <xsd:sequence>
+            <xsd:element name="brand" type="guitarBrandNameType"/>
+            <xsd:element name="type" type="pickupsTypeType"/>
+        </xsd:sequence>
     </xsd:complexType>
+
+    <xsd:complexType name="priceType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:nonNegativeInteger">
+                <xsd:attribute name="currency" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="speakersType">
+        <xsd:sequence>
+            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="quantity" type="xsd:nonNegativeInteger" use="required"/>
+        <xsd:attribute name="radius" type="xsd:nonNegativeInteger" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="orderedItemType">
+        <xsd:attribute name="idref" type="idType"/>
+    </xsd:complexType>
+
+    <!-- definition of simple types -->
 
     <xsd:simpleType name="guitarBrandNameType">
         <xsd:restriction base="xsd:string">
@@ -157,13 +181,6 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:complexType name="pickupsType">
-       <xsd:sequence>
-           <xsd:element name="brand" type="brandType"/>
-           <xsd:element name="type" type="pickupsTypeType"/>
-       </xsd:sequence>
-    </xsd:complexType>
-
     <xsd:simpleType name="pickupsTypeType">
         <xsd:restriction base="xsd:string">
             <xsd:maxLength value="3"/>
@@ -175,14 +192,6 @@
             <xsd:enumeration value="HHH"/>
         </xsd:restriction>
     </xsd:simpleType>
-
-    <xsd:complexType name="priceType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:nonNegativeInteger">
-                <xsd:attribute name="currency" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
 
     <xsd:simpleType name="guitarTypeType">
         <xsd:restriction base="xsd:string">
@@ -212,15 +221,6 @@
             <xsd:enumeration value="right"/>
         </xsd:restriction>
     </xsd:simpleType>
-
-    <xsd:complexType name="speakersType">
-        <xsd:sequence>
-            <xsd:element name="brand" type="brandType" minOccurs="1" maxOccurs="1"/>
-            <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-        </xsd:sequence>
-        <xsd:attribute name="quantity" type="xsd:nonNegativeInteger" use="required"/>
-        <xsd:attribute name="radius" type="xsd:nonNegativeInteger" use="required"/>
-    </xsd:complexType>
 
     <xsd:simpleType name="forType">
         <xsd:restriction base="xsd:string">
@@ -271,10 +271,6 @@
             <xsd:enumeration value="no"/>
         </xsd:restriction>
     </xsd:simpleType>
-
-    <xsd:complexType name="orderedItemType">
-        <xsd:attribute name="idref" type="idType"/>
-    </xsd:complexType>
 
     <xsd:simpleType name="postcodeType">
         <xsd:restriction base="xsd:string">

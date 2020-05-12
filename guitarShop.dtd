@@ -1,0 +1,68 @@
+<!ELEMENT guitarShop (products, orders)>
+<!ELEMENT products (guitar+, bass+, amplifier+, pick+, stringPack+, effect+)>
+
+<!ELEMENT guitar (brand, model, pickups?, price)>
+<!ATTLIST guitar id ID #REQUIRED>
+<!ATTLIST guitar guitarType CDATA #REQUIRED>
+<!ATTLIST guitar numberOfStrings CDATA #REQUIRED>
+<!ATTLIST guitar orientation CDATA #REQUIRED>
+
+<!ELEMENT bass (brand, model, pickups?, price)>
+<!ATTLIST bass id ID #REQUIRED>
+<!ATTLIST bass guitarType CDATA #REQUIRED>
+<!ATTLIST bass numberOfStrings CDATA #REQUIRED>
+<!ATTLIST bass orientation CDATA #REQUIRED>
+
+<!ELEMENT amplifier (brand, model, price, speakers)>
+<!ATTLIST amplifier id ID #REQUIRED>
+<!ATTLIST amplifier for CDATA #REQUIRED>
+<!ATTLIST amplifier ampType CDATA #REQUIRED>
+<!ATTLIST amplifier power CDATA #REQUIRED>
+
+<!ELEMENT pick (brand, model, price)>
+<!ATTLIST pick id ID #REQUIRED>
+<!ATTLIST pick width CDATA #REQUIRED>
+
+<!ELEMENT stringPack (brand, price)>
+<!ATTLIST stringPack id ID #REQUIRED>
+<!ATTLIST stringPack sizeFrom CDATA #REQUIRED>
+<!ATTLIST stringPack sizeTo CDATA #REQUIRED>
+
+<!ELEMENT effect (brand, model, price)>
+<!ATTLIST effect id ID #REQUIRED>
+<!ATTLIST effect effectType CDATA #REQUIRED>
+<!ATTLIST effect voltage CDATA #REQUIRED>
+
+<!ELEMENT pickups (brand, type)>
+<!ELEMENT type (#PCDATA)>
+
+<!ELEMENT speakers (brand, model)>
+<!ATTLIST speakers quantity CDATA #REQUIRED>
+<!ATTLIST speakers radius CDATA #REQUIRED>
+
+<!ELEMENT brand (#PCDATA)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price currency CDATA #REQUIRED>
+
+<!ELEMENT orders (order+)>
+
+<!ELEMENT order (orderedItem+, address, person)>
+<!ATTLIST order orderId ID #REQUIRED>
+<!ATTLIST order courier CDATA #REQUIRED>
+
+<!ELEMENT orderedItem (#PCDATA)>
+<!ATTLIST orderedItem idref IDREF #REQUIRED>
+
+<!ELEMENT address (city, postcode, street, building, flat?)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT postcode (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT building (#PCDATA)>
+<!ELEMENT flat (#PCDATA)>
+
+<!ELEMENT person (name, surname, phoneNumber)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
+<!ELEMENT phoneNumber (#PCDATA)>
+
