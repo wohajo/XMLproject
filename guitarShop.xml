@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE guitarShop SYSTEM "guitarShop.dtd">
+<!-- <!DOCTYPE guitarShop SYSTEM "guitarShop.dtd"> -->
 <guitarShop>
     <products>
         <guitar id="gui-1" guitarType="electric" numberOfStrings="6" orientation="left">
