@@ -1,165 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- <!DOCTYPE guitarShop SYSTEM "guitarShop.dtd"> -->
+<!DOCTYPE guitarShop SYSTEM "guitarShop.dtd">
 <guitarShop>
     <products>
-        <guitar id="gui-1" guitarType="electric" numberOfStrings="6" orientation="left">
-            <brand>Fender</brand>
-            <model>Made in Mexico 1970</model>
-            <pickups>
+        <guitars>
+            <guitar id="gui-1" guitarType="electric" numberOfStrings="6" orientation="left">
                 <brand>Fender</brand>
-                <type>SSS</type>
-            </pickups>
-            <price currency="pln">3000</price>
-        </guitar>
-
-        <guitar id="gui-2" guitarType="electric" numberOfStrings="7" orientation="right">
-            <brand>Ibanez</brand>
-            <model>GRX20</model>
-            <pickups>
+                <model>Made in Mexico 1970</model>
+                <pickups>
+                    <brand>Fender</brand>
+                    <type>SSS</type>
+                </pickups>
+                <price currency="pln">3000</price>
+            </guitar>
+    
+            <guitar id="gui-2" guitarType="electric" numberOfStrings="7" orientation="right">
                 <brand>Ibanez</brand>
-                <type>HH</type>
-            </pickups>
-            <price currency="pln">2800</price>
-        </guitar>
-
-        <guitar id="gui-3" guitarType="electric_baritone" numberOfStrings="6" orientation="right">
-            <brand>Fender</brand>
-            <model>B1</model>
-            <pickups>
+                <model>GRX20</model>
+                <pickups>
+                    <brand>Ibanez</brand>
+                    <type>HH</type>
+                </pickups>
+                <price currency="pln">2800</price>
+            </guitar>
+    
+            <guitar id="gui-3" guitarType="electric_baritone" numberOfStrings="6" orientation="right">
                 <brand>Fender</brand>
-                <type>SSS</type>
-            </pickups>
-            <price currency="pln">2700</price>
-        </guitar>
+                <model>B1</model>
+                <pickups>
+                    <brand>Fender</brand>
+                    <type>SSS</type>
+                </pickups>
+                <price currency="pln">2700</price>
+            </guitar>
+    
+            <guitar id="gui-4" guitarType="acoustic" numberOfStrings="6" orientation="right">
+                <brand>Epiphone</brand>
+                <model>Masterbilt Frontier</model>
+                <price currency="pln">2000</price>
+            </guitar>
+    
+            <guitar id="gui-5" guitarType="classic" numberOfStrings="6" orientation="right">
+                <brand>Epiphone</brand>
+                <model>Hispano master</model>
+                <price currency="pln">2300</price>
+            </guitar>
+        </guitars>
 
-        <guitar id="gui-4" guitarType="acoustic" numberOfStrings="6" orientation="right">
-            <brand>Epiphone</brand>
-            <model>Masterbilt Frontier</model>
-            <price currency="pln">2000</price>
-        </guitar>
-
-        <guitar id="gui-5" guitarType="classic" numberOfStrings="6" orientation="right">
-            <brand>Epiphone</brand>
-            <model>Hispano master</model>
-            <price currency="pln">2300</price>
-        </guitar>
-
-        <bass id="bas-1" guitarType="electric" numberOfStrings="4" orientation="right">
-            <brand>Fender</brand>
-            <model>Flea Signature</model>
-            <pickups>
+        <basses>
+            <bass id="bas-1" guitarType="electric" numberOfStrings="4" orientation="right">
                 <brand>Fender</brand>
-                <type>SS</type>
-            </pickups>
-            <price currency="pln">4500</price>
-        </bass>
-
-        <bass id="bas-2" guitarType="electric" numberOfStrings="4" orientation="left">
-            <brand>Fender</brand>
-            <model>Flea Signature LH</model>
-            <pickups>
+                <model>Flea Signature</model>
+                <pickups>
+                    <brand>Fender</brand>
+                    <type>SS</type>
+                </pickups>
+                <price currency="pln">4500</price>
+            </bass>
+    
+            <bass id="bas-2" guitarType="electric" numberOfStrings="4" orientation="left">
                 <brand>Fender</brand>
-                <type>SS</type>
-            </pickups>
-            <price currency="pln">4500</price>
-        </bass>
-
-        <bass id="bas-3" guitarType="electric" numberOfStrings="4" orientation="right">
-            <brand>Fender</brand>
-            <model>AM Original 70</model>
-            <pickups>
+                <model>Flea Signature LH</model>
+                <pickups>
+                    <brand>Fender</brand>
+                    <type>SS</type>
+                </pickups>
+                <price currency="pln">4500</price>
+            </bass>
+    
+            <bass id="bas-3" guitarType="electric" numberOfStrings="4" orientation="right">
                 <brand>Fender</brand>
-                <type>SS</type>
-            </pickups>
-            <price currency="pln">7000</price>
-        </bass>
+                <model>AM Original 70</model>
+                <pickups>
+                    <brand>Fender</brand>
+                    <type>SS</type>
+                </pickups>
+                <price currency="pln">7000</price>
+            </bass>
+        </basses>
 
-        <amplifier id="amp-1" for="bass" ampType="analog" power="20">
-            <brand>Fender</brand>
-            <model>Bassman</model>
-            <price currency="pln">1800</price>
-            <speakers quantity="1" radius="12">
+        <amplifiers>
+            <amplifier id="amp-1" for="bass" ampType="analog" power="20">
                 <brand>Fender</brand>
-                <model>Truetone</model>
-            </speakers>
-        </amplifier>
-
-        <amplifier id="amp-2" for="guitar" ampType="digital" power="50">
-            <brand>Boss</brand>
-            <model>Katana 50</model>
-            <price currency="pln">1000</price>
-            <speakers quantity="2" radius="12">
-                <brand>Fender</brand>
-                <model>Truetone</model>
-            </speakers>
-        </amplifier>
-
-        <amplifier id="amp-3" for="guitar" ampType="hybrid" power="20">
-            <brand>Marshall</brand>
-            <model>DC20</model>
-            <price currency="pln">1200</price>
-            <speakers quantity="1" radius="10">
+                <model>Bassman</model>
+                <price currency="pln">1800</price>
+                <speakers quantity="1" radius="12">
+                    <brand>Fender</brand>
+                    <model>Truetone</model>
+                </speakers>
+            </amplifier>
+    
+            <amplifier id="amp-2" for="guitar" ampType="digital" power="50">
+                <brand>Boss</brand>
+                <model>Katana 50</model>
+                <price currency="pln">1000</price>
+                <speakers quantity="2" radius="12">
+                    <brand>Fender</brand>
+                    <model>Truetone</model>
+                </speakers>
+            </amplifier>
+    
+            <amplifier id="amp-3" for="guitar" ampType="hybrid" power="20">
                 <brand>Marshall</brand>
-                <model>CustomShop</model>
-            </speakers>
-        </amplifier>
+                <model>DC20</model>
+                <price currency="pln">1200</price>
+                <speakers quantity="1" radius="10">
+                    <brand>Marshall</brand>
+                    <model>CustomShop</model>
+                </speakers>
+            </amplifier>
+        </amplifiers>
 
-        <pick id="pic-1" width="1.0">
-            <brand>Tortex</brand>
-            <model>UltraWide</model>
-            <price currency="pln">5</price>
-        </pick>
+        <picks>
+            <pick id="pic-1" width="1.0">
+                <brand>Tortex</brand>
+                <model>UltraWide</model>
+                <price currency="pln">5</price>
+            </pick>
+    
+            <pick id="pic-2" width="0.9">
+                <brand>Pickey</brand>
+                <model>Medium</model>
+                <price currency="pln">5</price>
+            </pick>
+            
+            <pick id="pic-3" width="0.6">
+                <brand>Tortex</brand>
+                <model>Light</model>
+                <price currency="pln">3</price>
+            </pick>
+        </picks>
 
-        <pick id="pic-2" width="0.9">
-            <brand>Pickey</brand>
-            <model>Medium</model>
-            <price currency="pln">5</price>
-        </pick>
+        <stringPacks>
+            <stringPack id="spk-1" sizeFrom="9" sizeTo="46">
+                <brand>Fender</brand>
+                <price currency="pln">50</price>
+            </stringPack>
+    
+            <stringPack id="spk-2" sizeFrom="11" sizeTo="48">
+                <brand>Ibanez</brand>
+                <price currency="pln">70</price>
+            </stringPack>
+    
+            <stringPack id="spk-3" sizeFrom="8" sizeTo="45">
+                <brand>Fender</brand>
+                <price currency="pln">40</price>
+            </stringPack>
+        </stringPacks>
         
-        <pick id="pic-3" width="0.6">
-            <brand>Tortex</brand>
-            <model>Light</model>
-            <price currency="pln">3</price>
-        </pick>
-
-        <stringPack id="spk-1" sizeFrom="9" sizeTo="46">
-            <brand>Fender</brand>
-            <price currency="pln">50</price>
-        </stringPack>
-
-        <stringPack id="spk-2" sizeFrom="11" sizeTo="48">
-            <brand>Ibanez</brand>
-            <price currency="pln">70</price>
-        </stringPack>
-
-        <stringPack id="spk-3" sizeFrom="8" sizeTo="45">
-            <brand>Fender</brand>
-            <price currency="pln">40</price>
-        </stringPack>
-        
-        <effect id="efc-1" effectType="distortion" voltage="9">
-            <brand>Boss</brand>
-            <model>DS2</model>
-            <price currency="pln">300</price>
-        </effect>
-
-        <effect id="efc-2" effectType="overdrive" voltage="9">
-            <brand>Boss</brand>
-            <model>OD2</model>
-            <price currency="pln">320</price>
-        </effect>
-
-        <effect id="efc-3" effectType="tremolo" voltage="9">
-            <brand>EHX</brand>
-            <model>T1</model>
-            <price currency="pln">250</price>
-        </effect>
-
-        <effect id="efc-4" effectType="delay" voltage="9">
-            <brand>TrueTone</brand>
-            <model>Del-02</model>
-            <price currency="pln">340</price>
-        </effect>
+        <effects>
+            <effect id="efc-1" effectType="distortion" voltage="9">
+                <brand>Boss</brand>
+                <model>DS2</model>
+                <price currency="pln">300</price>
+            </effect>
+    
+            <effect id="efc-2" effectType="overdrive" voltage="9">
+                <brand>Boss</brand>
+                <model>OD2</model>
+                <price currency="pln">320</price>
+            </effect>
+    
+            <effect id="efc-3" effectType="tremolo" voltage="9">
+                <brand>EHX</brand>
+                <model>T1</model>
+                <price currency="pln">250</price>
+            </effect>
+    
+            <effect id="efc-4" effectType="delay" voltage="9">
+                <brand>TrueTone</brand>
+                <model>Del-02</model>
+                <price currency="pln">340</price>
+            </effect>
+        </effects>
 
     </products>
 

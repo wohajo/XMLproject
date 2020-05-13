@@ -11,7 +11,7 @@
         </xsd:complexType>
 
         <xsd:key name="idKey">
-            <xsd:selector xpath="products/guitar | products/bass | products/amplifier | products/pick | products/stringPack | products/effect"/>
+            <xsd:selector xpath="products/guitars/guitar | products/basses/bass | products/amplifiers/amplifier | products/picks/pick | products/stringPacks/stringPack | products/effects/effect"/>
             <xsd:field xpath="@id"/>
         </xsd:key>
         <xsd:keyref name="idKeyRef" refer="idKey">
@@ -22,14 +22,54 @@
 
     <xsd:complexType name="productsType">
         <xsd:sequence>
-            <xsd:element name="guitar" type="guitarType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="bass" type="bassType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="amplifier" type="amplifierType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="pick" type="pickType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="stringPack" type="stringPackType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="effect" type="effectType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="guitars" type="guitarsType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="basses" type="bassesType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="amplifiers" type="amplifiersType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="picks" type="picksType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="stringPacks" type="stringPacksType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="effects" type="effectsType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
     </xsd:complexType>
+
+    <!-- CATEGORIES -->
+
+    <xsd:complexType name="guitarsType">
+        <xsd:sequence>
+            <xsd:element name="guitar" type="guitarType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="bassesType">
+        <xsd:sequence>
+            <xsd:element name="bass" type="bassType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="amplifiersType">
+        <xsd:sequence>
+            <xsd:element name="amplifier" type="amplifierType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="picksType">
+        <xsd:sequence>
+            <xsd:element name="pick" type="pickType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="stringPacksType">
+        <xsd:sequence>
+            <xsd:element name="stringPack" type="stringPackType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="effectsType">
+        <xsd:sequence>
+            <xsd:element name="effect" type="effectType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- PRODUCTS -->
 
     <xsd:complexType name="guitarType">
         <xsd:sequence>

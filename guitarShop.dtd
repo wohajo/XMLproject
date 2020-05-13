@@ -1,5 +1,13 @@
 <!ELEMENT guitarShop (products, orders)>
-<!ELEMENT products (guitar+, bass+, amplifier+, pick+, stringPack+, effect+)>
+
+<!ELEMENT products (guitars, basses, amplifiers, picks, stringPacks, effects)>
+<!ELEMENT guitars (guitar+)>
+<!ELEMENT basses (bass+)>
+<!ELEMENT amplifiers (amplifier+)>
+<!ELEMENT picks (pick+)>
+<!ELEMENT stringPacks (stringPack+)>
+<!ELEMENT effects (effect+)>
+
 
 <!ELEMENT guitar (brand, model, pickups?, price)>
 <!ATTLIST guitar id ID #REQUIRED>
