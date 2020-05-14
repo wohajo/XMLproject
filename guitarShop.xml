@@ -132,17 +132,20 @@
 
         <stringPacks>
             <stringPack id="spk-1" sizeFrom="9" sizeTo="46">
-                <brand>Fender</brand>
+                <brand>Elixir</brand>
+                <model>nanoweb</model>
                 <price currency="pln">50</price>
             </stringPack>
     
             <stringPack id="spk-2" sizeFrom="11" sizeTo="48">
                 <brand>Ibanez</brand>
+                <model>Metal</model>
                 <price currency="pln">70</price>
             </stringPack>
     
             <stringPack id="spk-3" sizeFrom="8" sizeTo="45">
                 <brand>Fender</brand>
+                <model>Standard</model>
                 <price currency="pln">40</price>
             </stringPack>
         </stringPacks>

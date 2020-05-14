@@ -73,7 +73,7 @@
 
     <xsd:complexType name="guitarType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="BrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="pickups" type="pickupsType" minOccurs="0"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
@@ -86,7 +86,7 @@
 
     <xsd:complexType name="bassType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="BrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="pickups" type="pickupsType" minOccurs="0" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
@@ -99,7 +99,7 @@
 
     <xsd:complexType name="amplifierType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="BrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="speakers" type="speakersType" minOccurs="1" maxOccurs="1"/>
@@ -112,7 +112,7 @@
 
     <xsd:complexType name="pickType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="BrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
@@ -122,7 +122,8 @@
 
     <xsd:complexType name="stringPackType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="BrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="idType" use="required"/>
@@ -132,7 +133,7 @@
 
     <xsd:complexType name="effectType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="BrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="price" type="priceType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
@@ -177,7 +178,7 @@
 
     <xsd:complexType name="pickupsType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType"/>
+            <xsd:element name="brand" type="BrandNameType"/>
             <xsd:element name="type" type="pickupsTypeType"/>
         </xsd:sequence>
     </xsd:complexType>
@@ -192,7 +193,7 @@
 
     <xsd:complexType name="speakersType">
         <xsd:sequence>
-            <xsd:element name="brand" type="guitarBrandNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="brand" type="BrandNameType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
         <xsd:attribute name="quantity" type="xsd:nonNegativeInteger" use="required"/>
@@ -211,8 +212,9 @@
 
     <!-- definition of simple types -->
 
-    <xsd:simpleType name="guitarBrandNameType">
+    <xsd:simpleType name="BrandNameType">
         <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Elixir"/>
             <xsd:enumeration value="Fender"/>
             <xsd:enumeration value="Boss"/>
             <xsd:enumeration value="EHX"/>

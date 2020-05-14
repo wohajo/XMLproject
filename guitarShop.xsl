@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method="html"/>
 
-<xsl:strip-space elements="price"/>
+<xsl:key name="orderedItemKey" match="guitarShop/products/guitars/guitar | guitarShop/products/basses/bass | guitarShop/products/amplifiers/amplifier | guitarShop/products/picks/pick | guitarShop/products/stringPacks/stringPack | guitarShop/products/effects/effect" use="@id"/>
 
 <xsl:template match="/">
     <html>
@@ -113,6 +113,7 @@
     <div class="product-card">
         <div class="card-title-info">
             <p>brand: <xsl:value-of select="./brand"/></p>
+            <p>model: <xsl:value-of select="./model"/></p>
         </div>
         <div class="card-detailed-info">
             <p>size: <xsl:value-of select="concat(./@sizeFrom, concat('-', ./@sizeTo))"/></p>
@@ -149,14 +150,23 @@
 
 <xsl:template match="order">
     <div class="order">
-        <xsl:apply-templates select="orderedItems"/>
+        <div class="orderedItems">
+            <table>
+                <xsl:apply-templates select="orderedItems"/>
+            </table>
+        </div>
         <xsl:apply-templates select="address"/>
         <xsl:apply-templates select="person"/>
     </div>
 </xsl:template>
 
 <xsl:template match="orderedItem">
-    <!-- <xsl:value-of select="./@idref"/> -->
+        <xsl:for-each select="key('orderedItemKey',@idref)">
+            <tr>
+                <td><xsl:value-of select="./brand"/></td>
+                <td><xsl:value-of select="./model"/></td>
+            </tr>
+        </xsl:for-each>
 </xsl:template>
 
 <xsl:template match="address">

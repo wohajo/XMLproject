@@ -31,7 +31,7 @@
 <!ATTLIST pick id ID #REQUIRED>
 <!ATTLIST pick width CDATA #REQUIRED>
 
-<!ELEMENT stringPack (brand, price)>
+<!ELEMENT stringPack (brand, model, price)>
 <!ATTLIST stringPack id ID #REQUIRED>
 <!ATTLIST stringPack sizeFrom CDATA #REQUIRED>
 <!ATTLIST stringPack sizeTo CDATA #REQUIRED>
