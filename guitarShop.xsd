@@ -149,9 +149,7 @@
 
     <xsd:complexType name="orderType">
         <xsd:sequence>
-            <xsd:sequence>
-                <xsd:element name="orderedItem" type="orderedItemType" minOccurs="1" maxOccurs="unbounded"/>
-            </xsd:sequence>
+            <xsd:element name="orderedItems" type="orderedItemsType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="address" type="addressType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="person" type="personType" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
@@ -199,6 +197,12 @@
         </xsd:sequence>
         <xsd:attribute name="quantity" type="xsd:nonNegativeInteger" use="required"/>
         <xsd:attribute name="radius" type="xsd:nonNegativeInteger" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="orderedItemsType">
+        <xsd:sequence>
+            <xsd:element name="orderedItem" type="orderedItemType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
     </xsd:complexType>
 
     <xsd:complexType name="orderedItemType">

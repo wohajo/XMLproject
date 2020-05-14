@@ -55,10 +55,11 @@
 
 <!ELEMENT orders (order+)>
 
-<!ELEMENT order (orderedItem+, address, person)>
+<!ELEMENT order (orderedItems, address, person)>
 <!ATTLIST order orderId ID #REQUIRED>
 <!ATTLIST order courier CDATA #REQUIRED>
 
+<!ELEMENT orderedItems (orderedItem+)>
 <!ELEMENT orderedItem (#PCDATA)>
 <!ATTLIST orderedItem idref IDREF #REQUIRED>
 

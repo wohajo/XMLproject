@@ -178,8 +178,10 @@
     <orders>
 
         <order orderId="ord-1" courier="yes">
-            <orderedItem idref="gui-1"/>
-            <orderedItem idref="efc-1"/>
+            <orderedItems>
+                <orderedItem idref="gui-1"/>
+                <orderedItem idref="efc-1"/>
+            </orderedItems>
             <address>
                 <city>Gdansk</city>
                 <postcode>86-400</postcode>
@@ -195,8 +197,10 @@
         </order>
 
         <order orderId="ord-2" courier="no">
-            <orderedItem idref="bas-1"/>
-            <orderedItem idref="amp-1"/>
+            <orderedItems>
+                <orderedItem idref="bas-1"/>
+                <orderedItem idref="amp-1"/>
+            </orderedItems>
             <address>
                 <city>Warsaw</city>
                 <postcode>32-730</postcode>
@@ -211,9 +215,11 @@
         </order>
 
         <order orderId="ord-3" courier="yes">
-            <orderedItem idref="gui-3"/>
-            <orderedItem idref="amp-3"/>
-            <orderedItem idref="spk-3"/>
+            <orderedItems>
+                <orderedItem idref="gui-3"/>
+                <orderedItem idref="amp-3"/>
+                <orderedItem idref="spk-3"/>
+            </orderedItems>
             <address>
                 <city>Poznan</city>
                 <postcode>76-722</postcode>
@@ -229,9 +235,11 @@
         </order>
 
         <order orderId="ord-4" courier="yes">
-            <orderedItem idref="gui-2"/>
-            <orderedItem idref="amp-2"/>
-            <orderedItem idref="pic-3"/>
+            <orderedItems>
+                <orderedItem idref="gui-2"/>
+                <orderedItem idref="amp-2"/>
+                <orderedItem idref="pic-3"/>
+            </orderedItems>
             <address>
                 <city>Krakow</city>
                 <postcode>32-222</postcode>
