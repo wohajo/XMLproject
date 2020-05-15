@@ -72,9 +72,19 @@
             <p>brand: <xsl:value-of select="./brand"/></p>
             <p>model: <xsl:value-of select="./model"/></p>
         </div>
-        <div class="card-detailed-info">
-            <p><xsl:apply-templates select="./pickups"/></p>
-        </div>
+        <xsl:choose>
+            <xsl:when test="boolean(./pickups)">
+                <div class="card-detailed-info">
+                    <p><xsl:apply-templates select="./pickups"/></p>
+                </div>
+            </xsl:when>
+            <xsl:otherwise>
+                <div class="card-detailed-info">
+                    <p>Acoustic</p>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
+        
         <div class="card-price-info">
             <p>price: <xsl:value-of select="./price"/></p>
         </div>
@@ -87,9 +97,18 @@
             <p>brand: <xsl:value-of select="./brand"/></p>
             <p>model: <xsl:value-of select="./model"/></p>
         </div>
-        <div class="card-detailed-info">
-            <p><xsl:apply-templates select="./pickups"/></p>
-        </div>
+        <xsl:choose>
+            <xsl:when test="boolean(./pickups)">
+                <div class="card-detailed-info">
+                    <p><xsl:apply-templates select="./pickups"/></p>
+                </div>
+            </xsl:when>
+            <xsl:otherwise>
+                <div class="card-detailed-info">
+                    <p>Acoustic</p>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
         <div class="card-price-info">
             <p>price: <xsl:value-of select="./price"/></p>
         </div>
