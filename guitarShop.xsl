@@ -1,45 +1,62 @@
 <?xml version="1.0"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                xmlns:exsl="http://exslt.org/common"
+                extension-element-prefixes="exsl"
+                version="1.0">
 <xsl:output method="html"/>
 
 <xsl:key name="orderedItemKey" match="guitarShop/products/guitars/guitar | guitarShop/products/basses/bass | guitarShop/products/amplifiers/amplifier | guitarShop/products/picks/pick | guitarShop/products/stringPacks/stringPack | guitarShop/products/effects/effect" use="@id"/>
 
 <xsl:template match="/">
     <html>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <head>
+            <title>Guitar Shop</title>
+        </head>
         <body>
             <div class="container">
+                    <h1 class="main-header">Guitar Shop</h1>
                 <div>
-                    <h1>Guitar Shop</h1>
+                    <h2 class="sub-main-header">Products</h2>
+                    <h3 class="sub-header">Guitars</h3>
+                    <div class="products">
+                        <xsl:for-each select="guitarShop/products/guitars">
+                            <xsl:apply-templates/>
+                        </xsl:for-each>
+                    </div>
+                    <h3 class="sub-header">Basses</h3>
+                    <div class="products">
+                        <xsl:for-each select="guitarShop/products/basses">
+                            <xsl:apply-templates/>
+                        </xsl:for-each>
+                    </div>
+                    <h3 class="sub-header">Amplifiers</h3>
+                    <div class="products">
+                        <xsl:for-each select="guitarShop/products/amplifiers">
+                            <xsl:apply-templates/>
+                        </xsl:for-each>
+                    </div>
+                    <h3 class="sub-header">Strings</h3>
+                    <div class="products">
+                        <xsl:for-each select="guitarShop/products/stringPacks">
+                            <xsl:apply-templates/>
+                        </xsl:for-each>
+                    </div>
+                    <h3 class="sub-header">Picks</h3>
+                    <div class="products">
+                        <xsl:for-each select="guitarShop/products/picks">
+                            <xsl:apply-templates/>
+                        </xsl:for-each>
+                    </div>
+                    <h3 class="sub-header">Effects</h3>
+                    <div class="products">
+                        <xsl:for-each select="guitarShop/products/effects">
+                            <xsl:apply-templates/>
+                        </xsl:for-each>
+                    </div>
                 </div>
                 <div>
-                    <h2>Products</h2>
-                    <h3>Guitars</h3>
-                    <xsl:for-each select="guitarShop/products/guitars">
-                        <xsl:apply-templates/>
-                    </xsl:for-each>
-                    <h3>Basses</h3>
-                    <xsl:for-each select="guitarShop/products/basses">
-                        <xsl:apply-templates/>
-                    </xsl:for-each>
-                    <h3>Amplifiers</h3>
-                    <xsl:for-each select="guitarShop/products/amplifiers">
-                        <xsl:apply-templates/>
-                    </xsl:for-each>
-                    <h3>Strings</h3>
-                    <xsl:for-each select="guitarShop/products/stringPacks">
-                        <xsl:apply-templates/>
-                    </xsl:for-each>
-                    <h3>Picks</h3>
-                    <xsl:for-each select="guitarShop/products/picks">
-                        <xsl:apply-templates/>
-                    </xsl:for-each>
-                    <h3>Effects</h3>
-                    <xsl:for-each select="guitarShop/products/effects">
-                        <xsl:apply-templates/>
-                    </xsl:for-each>
-                </div>
-                <div>
-                    <h2>Orders</h2>
+                    <h2 class="sub-main-header">Orders</h2>
                     <xsl:for-each select="guitarShop/orders">
                         <xsl:apply-templates/>
                     </xsl:for-each>
@@ -155,8 +172,19 @@
                 <xsl:apply-templates select="orderedItems"/>
             </table>
         </div>
+
         <xsl:apply-templates select="address"/>
         <xsl:apply-templates select="person"/>
+
+        <xsl:variable name="totalPrice">
+            <xsl:for-each select="./orderedItems/orderedItem">
+                <number>
+                    <xsl:value-of select="key('orderedItemKey',@idref)/price"/>
+                </number>
+            </xsl:for-each>
+        </xsl:variable>
+
+        <h5 class="total_price"> Total price: <xsl:value-of select="concat(sum(exsl:node-set($totalPrice)/number), ' pln')"/></h5>
     </div>
 </xsl:template>
 
@@ -165,6 +193,7 @@
             <tr>
                 <td><xsl:value-of select="./brand"/></td>
                 <td><xsl:value-of select="./model"/></td>
+                <td><xsl:value-of select="./price"/></td>
             </tr>
         </xsl:for-each>
 </xsl:template>
@@ -174,20 +203,20 @@
         Address: <xsl:value-of select="concat(./street, ' ')"/>
         <xsl:choose>
             <xsl:when test="boolean(./flat)">
-                <xsl:value-of select="concat(./building, concat('/', concat(./flat, ' ')))"/>
+                <xsl:value-of select="concat(./building, '/', ./flat, ' ')"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="concat(./building, ', ')"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:value-of select="concat(./postcode, concat(' ', ./city))"/>
+        <xsl:value-of select="concat(./postcode, ' ', ./city)"/>
     </div>
 </xsl:template>
 
 <xsl:template match="person">
     <div class="personal-info">
-        <xsl:value-of select="concat(./name, concat(' ', ./surname))"/>
-        <xsl:value-of select="concat(' (', concat(./phoneNumber, ')'))"/>
+        <xsl:value-of select="concat(./name, ' ', ./surname)"/>
+        <xsl:value-of select="concat(' (', ./phoneNumber, ')')"/>
     </div>
 </xsl:template>
     
