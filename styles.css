@@ -22,12 +22,6 @@ box-shadow: 2px 13px 34px -7px rgba(0,0,0,0.75);
     box-shadow: 2px 13px 24px -10px rgba(0,0,0,0.75);
 }
 
-#search-products {
-    border: #c17900;
-    padding: 1%;
-    width: 100%;
-}
-
 .product-card {
     display: inline-block;
     background-color: #f57c00;

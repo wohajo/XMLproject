@@ -19,8 +19,11 @@
                     <h1 class="main-header">Guitar Shop</h1>
                 <div>
                     <h2 class="sub-main-header">Products</h2>
-                    <div class="search-box-wrapper">
-                        <input type="text" id="search-products" onkeyup="searchProducts()" placeholder="Provide a name, type, width..." title="search in products"/>
+                    <div class="search-boxes-wrapper">
+                        <h4>Filters</h4>
+                        BRAND: <input type="text" id="search-brand" onkeyup="searchBrands()" placeholder="Provide a brand's name" title="search in products"/>
+                        MODEL: <input type="text" id="search-model" onkeyup="searchModels()" placeholder="Provide a model's name" title="search in products"/>
+                        DETAILS: <input type="text" id="search-detailed" onkeyup="searchDetailed()" placeholder="Provide a detailed information" title="search in products"/>
                     </div>
                     <h3 class="sub-header">Guitars</h3>
                     <div class="products">
@@ -74,8 +77,8 @@
 <xsl:template match="guitar">
     <div class="product-card">
         <div class="card-title-info">
-            <p class="product-search-target">brand: <xsl:value-of select="./brand"/></p>
-            <p class="product-search-target">model: <xsl:value-of select="./model"/></p>
+            <p class="brand-search-target">brand: <xsl:value-of select="./brand"/></p>
+            <p class="model-search-target">model: <xsl:value-of select="./model"/></p>
         </div>
         <xsl:choose>
             <xsl:when test="boolean(./pickups)">
@@ -85,7 +88,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <div class="card-detailed-info">
-                    <p class="product-search-target">Acoustic</p>
+                    <p class="detailed-search-target">Acoustic</p>
                 </div>
             </xsl:otherwise>
         </xsl:choose>
@@ -99,8 +102,8 @@
 <xsl:template match="bass">
     <div class="product-card">
         <div class="card-title-info">
-            <p class="product-search-target">brand: <xsl:value-of select="./brand"/></p>
-            <p class="product-search-target">model: <xsl:value-of select="./model"/></p>
+            <p class="brand-search-target">brand: <xsl:value-of select="./brand"/></p>
+            <p class="model-search-target">model: <xsl:value-of select="./model"/></p>
         </div>
         <xsl:choose>
             <xsl:when test="boolean(./pickups)">
@@ -110,7 +113,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <div class="card-detailed-info">
-                    <p class="product-search-target">Acoustic</p>
+                    <p class="detailed-search-target">Acoustic</p>
                 </div>
             </xsl:otherwise>
         </xsl:choose>
@@ -123,8 +126,8 @@
 <xsl:template match="amplifier">
     <div class="product-card">
         <div class="card-title-info">
-            <p class="product-search-target">brand: <xsl:value-of select="./brand"/></p>
-            <p class="product-search-target">model: <xsl:value-of select="./model"/></p>
+            <p class="brand-search-target">brand: <xsl:value-of select="./brand"/></p>
+            <p class="model-search-target">model: <xsl:value-of select="./model"/></p>
         </div>
         <div class="card-detailed-info">
             <xsl:apply-templates select="./speakers"/>
@@ -138,11 +141,11 @@
 <xsl:template match="pick">
     <div class="product-card">
         <div class="card-title-info">
-            <p class="product-search-target">brand: <xsl:value-of select="./brand"/></p>
-            <p class="product-search-target">model: <xsl:value-of select="./model"/></p>
+            <p class="brand-search-target">brand: <xsl:value-of select="./brand"/></p>
+            <p class="model-search-target">model: <xsl:value-of select="./model"/></p>
         </div>
         <div class="card-detailed-info">
-            <p class="product-search-target">Width: <xsl:apply-templates select="./@width"/></p>
+            <p class="detailed-search-target">Width: <xsl:apply-templates select="./@width"/></p>
         </div>
         <div class="card-price-info">
             <p>price: <xsl:value-of select="./price"/></p>
@@ -153,11 +156,11 @@
 <xsl:template match="stringPack">
     <div class="product-card">
         <div class="card-title-info">
-            <p class="product-search-target">brand: <xsl:value-of select="./brand"/></p>
-            <p class="product-search-target">model: <xsl:value-of select="./model"/></p>
+            <p class="brand-search-target">brand: <xsl:value-of select="./brand"/></p>
+            <p class="model-search-target">model: <xsl:value-of select="./model"/></p>
         </div>
         <div class="card-detailed-info">
-            <p class="product-search-target">size: <xsl:value-of select="concat(./@sizeFrom, concat('-', ./@sizeTo))"/></p>
+            <p class="detailed-search-target">size: <xsl:value-of select="concat(./@sizeFrom, concat('-', ./@sizeTo))"/></p>
         </div>
         <div class="card-price-info">
             <p>price: <xsl:value-of select="./price"/></p>
@@ -168,12 +171,12 @@
 <xsl:template match="effect">
     <div class="product-card">
         <div class="card-title-info">
-            <p class="product-search-target">brand: <xsl:value-of select="./brand"/></p>
-            <p class="product-search-target">model: <xsl:value-of select="./model"/></p>
+            <p class="brand-search-target">brand: <xsl:value-of select="./brand"/></p>
+            <p class="model-search-target">model: <xsl:value-of select="./model"/></p>
         </div>
         <div class="card-detailed-info">
-            <p class="product-search-target">Type of effect: <xsl:value-of select="./@effectType"/></p>
-            <p class="product-search-target">Voltage required: <xsl:value-of select="./@voltage"/></p>
+            <p class="detailed-search-target">Type of effect: <xsl:value-of select="./@effectType"/></p>
+            <p class="detailed-search-target">Voltage required: <xsl:value-of select="./@voltage"/></p>
         </div>
         <div class="card-price-info">
             <p>price: <xsl:value-of select="./price"/></p>
@@ -182,11 +185,11 @@
 </xsl:template>
 
 <xsl:template match="pickups">
-    <p class="product-search-target">pickups: <xsl:value-of select="./brand"/> (<xsl:value-of select="./type"/>)</p>
+    <p class="detailed-search-target">pickups: <xsl:value-of select="./brand"/> (<xsl:value-of select="./type"/>)</p>
 </xsl:template>
 
 <xsl:template match="speakers">
-    <p class="product-search-target">speakers: <xsl:value-of select="./@quantity"/>x<xsl:value-of select="concat(./brand, ' ')"/><xsl:value-of select="./model"/> (<xsl:value-of select="./@radius"/>")</p>
+    <p class="detailed-search-target">speakers: <xsl:value-of select="./@quantity"/>x<xsl:value-of select="concat(./brand, ' ')"/><xsl:value-of select="./model"/> (<xsl:value-of select="./@radius"/>")</p>
 </xsl:template>
 
 <xsl:template match="order">
