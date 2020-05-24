@@ -1,42 +1,33 @@
-function searchBrands() {
-    var input = document.getElementById("search-brand");
-    var filter = input.value.toLowerCase();
-    var nodes = document.getElementsByClassName('brand-search-target');
+document.getElementById("filter-button").addEventListener("click", filter)
+document.getElementById("clear-button").addEventListener("click", clearFilters)
+
+function filter() {
+    var inputBrand = document.getElementById("search-brand");
+    var inputModel = document.getElementById("search-model");
+    var inputDetails = document.getElementById("search-detailed");
+
+    var filterBrand = inputBrand.value.toLowerCase();
+    var filterModel = inputModel.value.toLowerCase();
+    var filterDetails = inputDetails.value.toLowerCase();
     
-    for (i = 0; i < nodes.length; i++) {
-        if (nodes[i].innerText.toLowerCase().includes(filter)) {
-            nodes[i].parentElement.parentElement.style.display = "inline-block";
+    var nodesBrand = document.getElementsByClassName('brand-search-target');
+    var nodesModel = document.getElementsByClassName('model-search-target');
+    var nodesDetails = document.getElementsByClassName('detailed-search-target');
+
+    console.log("im working");
+    
+    for (i = 0; i < nodesBrand.length; i++) {
+        if (nodesBrand[i].innerText.toLowerCase().includes(filterBrand) && nodesModel[i].innerText.toLowerCase().includes(filterModel) && nodesDetails[i].innerText.toLowerCase().includes(filterDetails)) {
+            nodesBrand[i].parentElement.parentElement.style.display = "inline-block";
         } else {
-            nodes[i].parentElement.parentElement.style.display = "none";
+            nodesBrand[i].parentElement.parentElement.style.display = "none";
         }
     }
 }
 
-function searchModels() {
-    var input = document.getElementById("search-model");
-    var filter = input.value.toLowerCase();
-    var nodes = document.getElementsByClassName('model-search-target');
-    
-    for (i = 0; i < nodes.length; i++) {
-        if (nodes[i].innerText.toLowerCase().includes(filter)) {
-            nodes[i].parentElement.parentElement.style.display = "inline-block";
-        } else {
-            nodes[i].parentElement.parentElement.style.display = "none";
-        }
-    }
+function clearFilters() {
+    document.getElementById("search-brand").value = "";
+    document.getElementById("search-model").value = "";
+    document.getElementById("search-detailed").value = "";
+    filter()
 }
-
-function searchDetailed() {
-    var input = document.getElementById("search-detailed");
-    var filter = input.value.toLowerCase();
-    var nodes = document.getElementsByClassName('detailed-search-target');
-    
-    for (i = 0; i < nodes.length; i++) {
-        if (nodes[i].innerText.toLowerCase().includes(filter)) {
-            nodes[i].parentElement.parentElement.style.display = "inline-block";
-        } else {
-            nodes[i].parentElement.parentElement.style.display = "none";
-        }
-    }
-}
-

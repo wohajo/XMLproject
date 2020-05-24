@@ -16,6 +16,47 @@ box-shadow: 2px 13px 34px -7px rgba(0,0,0,0.75);
     text-align: center;
 }
 
+.filter-field {
+    display: inline-block;
+    width: 20%;
+}
+
+input[type=text] {
+    color: black;
+    background-color: #ffad42;
+    border: none;
+    padding: 5%;
+    border-bottom: 2px solid #f57c00;
+    transition: 0.3s;
+}
+
+input[type=text]:focus {
+    background-color: #f57c00;
+}
+
+.search-button-wrapper {
+    display: inline-block;
+}
+
+.search-button {
+    border: none;
+    color: black;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 130%;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #ffad42;
+    transition: 0.3s;
+    box-shadow: 2px 13px 24px -10px rgba(0,0,0,0.75);
+}
+
+.search-button:hover {
+    background-color: #f57c00;
+}
+
 .products, .sub-header {
     background-color: #ffd95a;
     padding: 2%;

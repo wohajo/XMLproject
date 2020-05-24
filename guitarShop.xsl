@@ -21,9 +21,11 @@
                     <h2 class="sub-main-header">Products</h2>
                     <div class="search-boxes-wrapper">
                         <h4>Filters</h4>
-                        BRAND: <input type="text" id="search-brand" onkeyup="searchBrands()" placeholder="Provide a brand's name" title="search in products"/>
-                        MODEL: <input type="text" id="search-model" onkeyup="searchModels()" placeholder="Provide a model's name" title="search in products"/>
-                        DETAILS: <input type="text" id="search-detailed" onkeyup="searchDetailed()" placeholder="Provide a detailed information" title="search in products"/>
+                        <div class="filter-field">BRAND: <input type="text" id="search-brand" placeholder="Provide a brand's name" title="search in products"/></div>
+                        <div class="filter-field">MODEL: <input type="text" id="search-model" placeholder="Provide a model's name" title="search in products"/></div>
+                        <div class="filter-field">DETAILS: <input type="text" id="search-detailed" placeholder="Provide a detailed information" title="search in products"/></div>
+                        <div class="search-button-wrapper"><button type="button" class="search-button" id="filter-button">Filter</button></div>
+                        <div class="search-button-wrapper"><button type="button" class="search-button" id="clear-button">Clear filters</button></div>
                     </div>
                     <h3 class="sub-header">Guitars</h3>
                     <div class="products">
@@ -69,7 +71,8 @@
                     </xsl:for-each>
                 </div>
             </div>
-            <script src="scripts.js"></script>
+            <script src="scripts.js"><br/>
+            </script>
         </body>
     </html>
 </xsl:template>
@@ -175,8 +178,8 @@
             <p class="model-search-target">model: <xsl:value-of select="./model"/></p>
         </div>
         <div class="card-detailed-info">
-            <p class="detailed-search-target">Type of effect: <xsl:value-of select="./@effectType"/></p>
-            <p class="detailed-search-target">Voltage required: <xsl:value-of select="./@voltage"/></p>
+            <p class="detailed-search-target">Type of effect: <xsl:value-of select="./@effectType"/><br/>
+                Voltage required: <xsl:value-of select="./@voltage"/></p>
         </div>
         <div class="card-price-info">
             <p>price: <xsl:value-of select="./price"/></p>
