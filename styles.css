@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-box-shadow: 2px 13px 34px -7px rgba(0,0,0,0.75);
+    box-shadow: 2px 13px 34px -7px rgba(0,0,0,0.75);
     background-color: #f9a825;    
     padding: 2%;
     margin: auto;
@@ -36,6 +36,7 @@ input[type=text]:focus {
 
 .search-button-wrapper {
     display: inline-block;
+    margin-bottom: 2%;
 }
 
 .search-button {
@@ -57,6 +58,10 @@ input[type=text]:focus {
     background-color: #f57c00;
 }
 
+.search-button:active {
+    box-shadow: none;
+}
+
 .products, .sub-header {
     background-color: #ffd95a;
     padding: 2%;
@@ -74,6 +79,43 @@ input[type=text]:focus {
 
 .product-card:hover, .order:hover {
     box-shadow: 2px 13px 24px 2px rgba(0,0,0,0.75);
+}
+
+.product-buttons {
+    padding: 1%;
+}
+
+.product-button {
+    min-width: 50px;
+    min-height: 50px;
+    border: none;
+    color: black;
+    margin: 2%;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 4% 4%;
+    box-shadow: 2px 13px 24px -10px rgba(0,0,0,0.75);
+    border-radius: 100%;
+}
+
+.update-button {
+    background-color: #ffad42;
+}
+
+.update-button:hover {
+    background-color: #f57c00;
+}
+
+.delete-button {
+    background-color: #bb0010;
+}
+
+.delete-button:hover {
+    background-color: #e00013;
+}
+
+.img-paragraph {
+    display: inline-block;
 }
 
 .card-title-info, .card-detailed-info, .card-price-info, .address, .personal-info {
@@ -97,4 +139,13 @@ th, td {
 
 table {
     margin: 1%;
+}
+
+.footer {
+    box-shadow: 2px 13px 34px -7px rgba(0,0,0,0.75);
+    background-color: #f9a825;    
+    padding: 2%;
+    margin: auto;
+    margin-top: 5%;
+    width: 80vw;
 }
