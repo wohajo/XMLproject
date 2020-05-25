@@ -145,7 +145,9 @@
         </xsl:choose>
         
         <div class="card-price-info">
-            price:<p><xsl:value-of select="./price"/></p>
+            price:<p>
+                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+            </p>
         </div>
         <div class="product-buttons">
             <p class="img-paragraph"><button class="product-button update-button update-button-guitar"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button></p>
@@ -176,7 +178,9 @@
             </xsl:otherwise>
         </xsl:choose>
         <div class="card-price-info">
-            price: <p><xsl:value-of select="./price"/></p>
+            price:<p>
+                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+            </p>
         </div>
         <div class="product-buttons">
             <p class="img-paragraph"><button class="product-button update-button update-button-bass"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button></p>
@@ -198,7 +202,9 @@
             <xsl:apply-templates select="./speakers"/>
         </div>
         <div class="card-price-info">
-            price: <p><xsl:value-of select="./price"/></p>
+            price:<p>
+                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+            </p>
         </div>
         <div class="product-buttons">
             <p class="img-paragraph"><button class="product-button update-button update-button-amplifier"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button></p>
@@ -220,7 +226,9 @@
             Width: <p class="detailed-search-target"><xsl:apply-templates select="./@width"/></p>
         </div>
         <div class="card-price-info">
-            price: <p><xsl:value-of select="./price"/></p>
+            price:<p>
+                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+            </p>
         </div>
         <div class="product-buttons">
             <p class="img-paragraph"><button class="product-button update-button update-button-pick"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button></p>
@@ -242,7 +250,9 @@
             size: <p class="detailed-search-target"><xsl:value-of select="concat(./@sizeFrom, concat('-', ./@sizeTo))"/></p>
         </div>
         <div class="card-price-info">
-            price: <p><xsl:value-of select="./price"/></p>
+            price:<p>
+                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+            </p>
         </div>
         <div class="product-buttons">
             <p class="img-paragraph"><button class="product-button update-button update-button-strings"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button></p>
@@ -266,7 +276,9 @@
             </p>
         </div>
         <div class="card-price-info">
-            price: <p><xsl:value-of select="./price"/></p>
+            price:<p>
+                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+            </p>
         </div>
         <div class="product-buttons">
             <p class="img-paragraph"><button class="product-button update-button update-button-effect"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button></p>

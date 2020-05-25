@@ -20,7 +20,7 @@ body {
     display: inline-block;
 }
 
-input[type=text] {
+input[type=text], input[type=number] {
     color: black;
     background-color: #ffad42;
     border: none;
@@ -32,6 +32,10 @@ input[type=text] {
 
 input[type=text]:focus {
     background-color: #f57c00;
+}
+
+input[type=number] {
+    width: 90%;
 }
 
 .search-button-wrapper {
@@ -78,7 +82,7 @@ input[type=text]:focus {
 }
 
 .add-button-wrapper {
-    text-align: right;
+    text-align: center;
     display: inline-block;
     width: 5%;
 }

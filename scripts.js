@@ -20,17 +20,17 @@ function filterProducts() {
     var filterBrand = inputBrand.value.toLowerCase();
     var filterModel = inputModel.value.toLowerCase();
     var filterDetails = inputDetails.value.toLowerCase();
-    
+
     var nodesId = document.getElementsByClassName('product-id-search-target');
     var nodesBrand = document.getElementsByClassName('brand-search-target');
     var nodesModel = document.getElementsByClassName('model-search-target');
     var nodesDetails = document.getElementsByClassName('detailed-search-target');
-    
+
     for (i = 0; i < nodesBrand.length; i++) {
         if (nodesId[i].innerText.toLowerCase().includes(filterId)
-        && nodesBrand[i].innerText.toLowerCase().includes(filterBrand) 
-        && nodesModel[i].innerText.toLowerCase().includes(filterModel) 
-        && nodesDetails[i].innerText.toLowerCase().includes(filterDetails)) {
+            && nodesBrand[i].innerText.toLowerCase().includes(filterBrand)
+            && nodesModel[i].innerText.toLowerCase().includes(filterModel)
+            && nodesDetails[i].innerText.toLowerCase().includes(filterDetails)) {
             nodesBrand[i].parentElement.parentElement.style.display = "inline-block";
         } else {
             nodesBrand[i].parentElement.parentElement.style.display = "none";
@@ -60,20 +60,24 @@ function updateProduct() {
     var brands = event.currentTarget.parentElement.parentElement.parentElement.getElementsByClassName("brand-search-target");
     var models = event.currentTarget.parentElement.parentElement.parentElement.getElementsByClassName("model-search-target");
     var detailedElement = event.currentTarget.parentElement.parentElement.parentElement.getElementsByClassName("detailed-search-target");
+    var prices = event.currentTarget.parentElement.parentElement.parentElement.getElementsByClassName("card-price-info");
 
     brand = brands[0];
     model = models[0];
     detailed = detailedElement[0];
+    var price = prices[0].firstElementChild.firstElementChild;
 
     if (brand.contentEditable == "true") {
         brand.contentEditable = "false";
         model.contentEditable = "false";
         detailed.contentEditable = "false";
+        price.setAttribute("readOnly", "true");
         button.style.backgroundColor = "#ffad42";
     } else {
         brand.contentEditable = "true";
         model.contentEditable = "true";
         detailed.contentEditable = "true";
+        price.removeAttribute("readOnly");
         button.style.backgroundColor = "red";
     }
 }
