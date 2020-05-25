@@ -18,7 +18,6 @@ body {
 
 .filter-field {
     display: inline-block;
-    width: 20%;
 }
 
 input[type=text] {
@@ -28,6 +27,7 @@ input[type=text] {
     padding: 5%;
     border-bottom: 2px solid #f57c00;
     transition: 0.3s;
+    margin: 2%;
 }
 
 input[type=text]:focus {
@@ -62,13 +62,29 @@ input[type=text]:focus {
     box-shadow: none;
 }
 
+.search-button:enabled {
+    box-shadow: none;
+}
+
 .products, .sub-header {
     background-color: #ffd95a;
     padding: 2%;
     box-shadow: 2px 13px 24px -10px rgba(0,0,0,0.75);
 }
 
+.sub-header {
+    display: inline-block;
+    width: 90%;
+}
+
+.add-button-wrapper {
+    text-align: right;
+    display: inline-block;
+    width: 5%;
+}
+
 .product-card {
+    min-width: 15%;
     display: inline-block;
     background-color: #f57c00;
     padding: 1%;
@@ -85,7 +101,7 @@ input[type=text]:focus {
     padding: 1%;
 }
 
-.product-button {
+.product-button, .add-button {
     min-width: 50px;
     min-height: 50px;
     border: none;
@@ -103,7 +119,7 @@ input[type=text]:focus {
 }
 
 .update-button:hover {
-    background-color: #f57c00;
+    background-color: #f57c00 !important; 
 }
 
 .delete-button {
@@ -112,6 +128,14 @@ input[type=text]:focus {
 
 .delete-button:hover {
     background-color: #e00013;
+}
+
+.add-button {
+    background-color: #035c00;
+}
+
+.add-button:hover {
+    background-color: #05a500;
 }
 
 .img-paragraph {
