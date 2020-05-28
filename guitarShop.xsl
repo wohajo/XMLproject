@@ -96,14 +96,6 @@
                 </div>
                 <div>
                     <h2 class="sub-main-header">Orders</h2>
-                    <div class="search-boxes-wrapper">
-                        <h4>Filters</h4>
-                        <div class="filter-field">ID: <input type="text" id="search-order-id" placeholder="Provide an orders's id" title="search orders"/></div>
-                        <div class="filter-field">ITEMS: <input type="text" id="search-ordered-item" placeholder="Provide an item's name" title="search products"/></div>
-                        <div class="filter-field">ADDRESS: <input type="text" id="search-address" placeholder="Provide a address" title="search address"/></div>
-                        <div class="filter-field">PERSON: <input type="text" id="search-person" placeholder="Provide a personal information" title="search person"/></div>
-                        <div class="search-button-wrapper"><button type="button" class="search-button" id="clear-addresses-filter-button">Clear filters</button></div>
-                    </div>
                     <div id="orders">
                         <xsl:for-each select="guitarShop/orders">
                             <xsl:apply-templates/>
@@ -146,7 +138,7 @@
         
         <div class="card-price-info">
             price:<p>
-                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+                <input readonly="true" class="price-input" type="number" value="{./price}" oninput="validity.valid||(value='');"/>
             </p>
         </div>
         <div class="product-buttons">
@@ -179,7 +171,7 @@
         </xsl:choose>
         <div class="card-price-info">
             price:<p>
-                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+                <input readonly="true" class="price-input" type="number" value="{./price}" oninput="validity.valid||(value='');"/>
             </p>
         </div>
         <div class="product-buttons">
@@ -203,7 +195,7 @@
         </div>
         <div class="card-price-info">
             price:<p>
-                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+                <input readonly="true" class="price-input" type="number" value="{./price}" oninput="validity.valid||(value='');"/>
             </p>
         </div>
         <div class="product-buttons">
@@ -227,7 +219,7 @@
         </div>
         <div class="card-price-info">
             price:<p>
-                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+                <input readonly="true" class="price-input" type="number" value="{./price}" oninput="validity.valid||(value='');"/>
             </p>
         </div>
         <div class="product-buttons">
@@ -251,7 +243,7 @@
         </div>
         <div class="card-price-info">
             price:<p>
-                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+                <input readonly="true" class="price-input" type="number" value="{./price}" oninput="validity.valid||(value='');"/>
             </p>
         </div>
         <div class="product-buttons">
@@ -277,7 +269,7 @@
         </div>
         <div class="card-price-info">
             price:<p>
-                <input readonly="true" class="price-input" type="number" value="{./price}"/>
+                <input readonly="true" class="price-input" type="number" value="{./price}" oninput="validity.valid||(value='');"/>
             </p>
         </div>
         <div class="product-buttons">
@@ -292,7 +284,7 @@
 </xsl:template>
 
 <xsl:template match="speakers">
-    <p class="detailed-search-target">speakers: <xsl:value-of select="./@quantity"/>x<xsl:value-of select="concat(./brand, ' ')"/><xsl:value-of select="./model"/> (<xsl:value-of select="./@radius"/>")</p>
+    speakers: <p class="detailed-search-target"><xsl:value-of select="./@quantity"/>x<xsl:value-of select="concat(./brand, ' ')"/><xsl:value-of select="./model"/> (<xsl:value-of select="./@radius"/>")</p>
 </xsl:template>
 
 <xsl:template match="order">

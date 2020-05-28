@@ -3,7 +3,6 @@ document.getElementById("search-product-id").addEventListener("keyup", filterPro
 document.getElementById("search-model").addEventListener("keyup", filterProducts)
 document.getElementById("search-detailed").addEventListener("keyup", filterProducts)
 document.getElementById("clear-products-filter-button").addEventListener("click", clearProductsFilters)
-document.getElementById("clear-products-filter-button").addEventListener("click", clearProductsFilters)
 
 var removeProductButtons = document.getElementsByClassName("delete-button");
 for (var i = 0; i < removeProductButtons.length; i++) {
@@ -50,9 +49,9 @@ function removeProduct() {
     event.currentTarget.parentElement.parentElement.parentElement.remove();
 }
 
-var updateGuitarButtons = document.getElementsByClassName("update-button");
-for (var i = 0; i < updateGuitarButtons.length; i++) {
-    updateGuitarButtons[i].addEventListener("click", updateProduct, false)
+var updateProductsButtons = document.getElementsByClassName("update-button");
+for (var i = 0; i < updateProductsButtons.length; i++) {
+    updateProductsButtons[i].addEventListener("click", updateProduct, false)
 }
 
 function updateProduct() {
@@ -79,5 +78,50 @@ function updateProduct() {
         detailed.contentEditable = "true";
         price.removeAttribute("readOnly");
         button.style.backgroundColor = "red";
+    }
+}
+
+var addProductsButtons = document.getElementsByClassName("add-button");
+for (var i = 0; i < addProductsButtons.length; i++) {
+    addProductsButtons[i].addEventListener("click", addProduct, false)
+}
+
+function addProduct() {
+    var buttonId = event.currentTarget.id;
+
+    // product card
+    var productCardDiv = document.createElement("div")
+    productCardDiv.classList.add("product-card")
+
+    // id div
+    var cardIdDiv = document.createElement("div")
+    productCardDiv.appendChild(cardIdDiv)
+    cardIdDiv.classList.add("card-id")
+    
+    var cardIdP = document.createElement("p")
+    cardIdDiv.appendChild(cardIdP)
+    cardIdP.classList.add("product-id-search-target")
+    var newIdNumber = document.getElementById("guitars").childElementCount + 1
+    cardIdP.innerText = "gui-" + newIdNumber
+    // title div  
+    productCardDiv.innerHTML += '<div class="card-title-info"> brand: <p class="brand-search-target">New guitar</p> model: <p class="model-search-target">New model</p></div>'
+    // detailed info
+    productCardDiv.innerHTML += ' <div class="card-detailed-info"><p class="detailed-search-target">Detailed informations</p></div>'
+    // price
+    productCardDiv.innerHTML += '<div class="card-price-info">price: <p><input readonly="true" class="price-input" type="number" value="0" oninput="validity.valid||(value=\'\');"/></p></div>'
+    // buttons 
+    productCardDiv.innerHTML += '<div class="product-buttons"><p class="img-paragraph"><button class="product-button update-button update-button-guitar"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button></p><p class="img-paragraph"><button class="product-button delete-button"><img src="https://img.icons8.com/material-rounded/24/000000/trash.png"/></button></p></div>'
+
+    var guitars = document.getElementById("guitars");
+    guitars.appendChild(productCardDiv);
+
+    var updateProductsButtons = document.getElementsByClassName("update-button");
+    for (var i = 0; i < updateProductsButtons.length; i++) {
+        updateProductsButtons[i].addEventListener("click", updateProduct, false)
+    }
+
+    var removeProductButtons = document.getElementsByClassName("delete-button");
+    for (var i = 0; i < removeProductButtons.length; i++) {
+        removeProductButtons[i].addEventListener("click", removeProduct, false)
     }
 }
