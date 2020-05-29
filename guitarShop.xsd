@@ -15,7 +15,7 @@
             <xsd:field xpath="@id"/>
         </xsd:key>
         <xsd:keyref name="idKeyRef" refer="idKey">
-            <xsd:selector xpath="orders/order/orderedItem"/>
+            <xsd:selector xpath="orders/order/orderedItems/orderedItem"/>
             <xsd:field xpath="@idref"/>
         </xsd:keyref>
     </xsd:element>
